@@ -25,11 +25,25 @@ function animatePress(currentColour){
     }, 100);
 }
 
+function checkAnswer(currentLevel){
+    for(let i=0; i<=currentLevel; i++){
+        if(gamePattern[i] == userClickedPattern[i]){
+            continue;
+        }
+        else{
+
+        }
+    }
+    nextSequence();
+}
+
 $(".btn").click(function(){
     let userChosenColour = $(this).attr('id');
     userClickedPattern.push(userChosenColour);
     playSound(userChosenColour);
     animatePress(userChosenColour);
+    // nextSequence();
+    checkAnswer(level);
 });
 
 $(document).keypress(function(){
